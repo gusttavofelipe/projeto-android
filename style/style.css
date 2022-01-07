@@ -1,0 +1,227 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'droid' ;
+    src: url('../fontes/idroid.otf')
+    format('opentype');
+    font-weight: normal;
+}
+
+:root{
+    --cor0:#c5ebd6;
+    --cor1:#83e1ad;
+    --cor2:#3ddc84;
+    --cor3:#2fa866;
+    --cor4:#1a5c37;
+    --cor5:#063d1e;
+
+    --fonte-padrao: Arial, Helvetica, sans-serif;
+    --fonte-do-titulo-do-site: 'Bebas Neue', 'cursive';
+    --fonte-android: 'droid', 'cursive';
+    
+    /*
+    o nome de toda e qualquer variavel deve começar com dois traços (--)
+    não se pode colocar espaços no nome das variaveis
+    a pseudo classe :root corresponde ao elemento raiz do documento.
+    pode ser usado para definir variaveis 
+    Uma variável é um nome que definimos para armazenar dados de forma simples.
+    como no exemplo acima, foi dado nomes que eu escolhi para as cores que eu escolhi.
+    O valor de uma variável pode ser alterado no andamento do algoritmo, por isso o nome de variável.
+    tudo que for definido dentro dessa pseudo classe valerá para todo documento.
+    */   
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    /* o seletor asterisco (*) define configurações globais para o seu arquivo, tudo que for definido nele, será usado em todos os elementos do arquivo*/
+}
+
+
+body{
+    background-color: #c5ebd6;
+    font-family: var(--fonte-padrao);
+}
+
+.externo::after{ /*pseudo classe que adiciona alguma coisa (altura, largura, background, -caracteres, emojis etc) depois do que foi adicionado no HTML */
+    content: '\00A0\1F517';
+
+}
+
+header{
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 150px; /*altura minima*/
+    text-align: center;
+    padding-top: 40px;
+}
+
+header h1{
+    color: white;
+    margin-bottom: 20px;
+    font-size: 3em;
+    font-weight: normal;
+    font-family: var(--fonte-do-titulo-do-site);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.349);
+}
+
+header p{
+    color: rgba(255, 255, 255, 0.644);
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    max-width: 600px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: auto; /*margem ajustada automaticamente de acordo com o conteudo especificado*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.349);
+}
+
+nav{
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.548);
+}
+
+nav a:hover{/*define o que vai acontecer quando passar o mouse encima do elemento*/
+    background-color: var(--cor3);
+    color: var(--cor5);
+    border-radius: 5px;
+}
+
+nav a{
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.4s; /*DEFINE A DURAÇÃO DA TRANSIÇÃO, NESSE CASO, DO HOVER*/
+}
+
+main{
+    min-width: 300px; /*largura minima*/
+    max-width: 1000px;/*largura maxima*/
+    padding: 20px;
+    margin: auto; /*margem ajustada automaticamente de acordo com o conteudo especificado*/
+    margin-bottom: 30px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.575);
+    background-color: white;  
+}
+
+main p{
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 25px; /*define um espaço no começo do paragrafo*/
+    line-height: 2em; /*define a altura das linhas*/
+}
+
+main strong{
+    color: var(--cor4);
+}
+
+main a{
+    text-decoration: none;
+    background-color: var(--cor2);
+    font-weight: bold;
+    color: var(--cor5);
+    padding: 2px 5px;
+    border-radius: 2px;
+    transition-duration: 0.1s;
+}
+
+main a:hover{
+    text-decoration: underline;
+    
+    padding: 0px 1px;
+    color: var(--cor4);
+
+}
+
+main h1{
+    font-weight: normal;
+    font-size: 1.8em;
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+}
+
+main h2{
+    font-weight: normal;
+    color: var(--cor4);
+    font-family: var(--fonte-android);
+    background-image: linear-gradient(to right, var(--cor1), transparent );
+    text-indent: 8px;
+}
+
+img{
+    width: 100%; /*o conteudo ira ocupar 100% da tela independente do tamanho*/
+}
+
+.bugpequeno{
+    max-width: 350px; /*tamanho maximo*/
+    display: block; /*images são naturalmente inline level. display: block a torna block level*/
+    margin: auto; /*margem ajustada automaticamente de acordo com o conteudo especificado*/
+}
+
+aside{
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: var(--cor1);
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.253);
+}
+
+aside > h3{
+    background-color: var(--cor4);
+    color: white;
+    margin: -10px -10px 0px -10px;
+    padding: 10px;
+    border-radius: 10px  10px 0px 0px;
+}
+aside > ul{   
+    list-style-type: '\1F5F8\00A0\00A0'; /*define o tipo de marcador da lista, nesse caso, usando um codigo de emoji
+    coloque o codigo do emoji entrre aspas (tudo deve estar entre aspas) e antes do codigo, depois da primeira aspa, uma barra inversa;
+    para distanciar [não compativel com todos os navegadores] o marcador da lista do texto da lista: coloque outra barra inversa e depois um codigo NBSP, que pode ser repetido para aumentar o espaço     */
+
+    columns: 2; /*define a quantidade de colunas do texto*/
+    list-style-position: inside; /*define a posição dos marcadores da lista*/
+}
+div.video{
+    background-color: var(--cor5);
+    margin-bottom: 25px;
+    margin: 0px -20 30px -20px;
+    padding: 20px;
+    padding-bottom: 54.1%;      
+    position: relative;    
+}
+
+div.video > iframe{
+  
+    position:absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+footer{
+    font-weight: bolder;
+    background-color: var(--cor5);
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+footer a{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor3);
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: var(--cor1);
+    
+
+    
+}
